@@ -1,0 +1,26 @@
+{
+    "appKeys": {
+        "KEY_MENU_ITEMS": 0,
+        "KEY_MENU_TITLE": 1,
+        "KEY_MENU_URL": 2
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "matt@mrkunkel.com",
+    "longName": "Homie",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "Homie",
+    "targetPlatforms": [
+        "basalt"
+    ],
+    "uuid": "2ddde6c1-9cf9-4f08-bf70-7d5ce736b7de",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
