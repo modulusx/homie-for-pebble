@@ -18,51 +18,9 @@ typedef struct {
 
 static WindowConfig *s_main;
 
-/*
-  static void submenu_select_callback(int index, void *ctx) {
-  s_submenu_items[index].subtitle = "You've hit select here!";
-  layer_mark_dirty(simple_menu_layer_get_layer(s_simple_submenu_layer));
-}
-
-static void sub_window_load(Window *window) {
-  int num_a_items = 0;
-	window_config *swc = (window_config *)window_get_user_data(window);
-
-  s_submenu_items[num_a_items++] = (SimpleMenuItem) {
-    .title = "Lights Off",
-    .callback = submenu_select_callback,
-  };
-  s_submenu_items[num_a_items++] = (SimpleMenuItem) {
-    .title = "Bedroom On",
-    .callback = submenu_select_callback,
-  };
-  s_submenu_items[num_a_items++] = (SimpleMenuItem) {
-    .title = "Pioneer On",
-    .callback = submenu_select_callback,
-  };
-
-  s_submenu_sections[0] = (SimpleMenuSection) {
-		.title = PBL_IF_RECT_ELSE(s_main_menu_items[swc->index].title, NULL),
-    .num_items = swc->num_items,
-    .items = s_submenu_items,
-  };
-
-  Layer *window_layer = window_get_root_layer(window);
-  GRect bounds = layer_get_frame(window_layer);
-
-  s_simple_submenu_layer = simple_menu_layer_create(bounds, window, s_submenu_sections, swc->num_sections, NULL);
-
-  layer_add_child(window_layer, simple_menu_layer_get_layer(s_simple_submenu_layer));
-}
-*/
-
 static void menu_select_callback(int index, void *ctx) {
   s_main->menu_items[index].subtitle = "You've hit select here!";
   layer_mark_dirty(simple_menu_layer_get_layer(s_main->menu_layer));
-	
-	//window_set_user_data(s_sub_window, s_win_conf);
-  //sub_window_load(s_sub_window);
-	//window_stack_push(s_sub_window, true);
 }
 
 static void menu_window_load(Window *window) {
@@ -187,7 +145,7 @@ static void outbox_failed_callback(DictionaryIterator *iterator, AppMessageResul
 }
 
 static void outbox_sent_callback(DictionaryIterator *iterator, void *context) {
-  //APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
+  APP_LOG(APP_LOG_LEVEL_INFO, "Outbox send success!");
 }
 
 static void init() {
